@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<meta name=viewport content='width=device-width'>
+		<title>Blog App: Register</title>
+	</head>
+	<body>
+		<form method="post" action="/signup">
+			<input type=text placeholder='   Enter Your Name' name=name required pattern="{1, 32}">
+			<input type=email placeholder='   Enter Mail ID' name=mail required>
+			<input type=password placeholder='   Enter Password' name=pswd1 required pattern="{8, 36}">
+			<input type=password placeholder='   Re-enter Password' name=pswd2 required pattern="{8, 36}">
+			<input type=submit value=Register>
+		</form>
+		<hr>
+		<span>Already have an account ? &nbsp</span><a href=/>Login</a>
+	</body>
+</html>

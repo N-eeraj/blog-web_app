@@ -1,9 +1,0 @@
-{% extends 'layout_user.html' %}
-
-{% block body %}
-<form method="post" action="/update_blog?id={{val[0]}}">
-    <input type="text" placeholder="   Title" value="{{val[2]}}"  name="title" required>
-    <textarea placeholder="   Enter your content here"  name='content' required>{{val[3]}}</textarea>
-    <input type=submit value="Update">
-</form>
-{% endblock %}

@@ -1,0 +1,4 @@
+LOGIN_ID,NAME,EMAIL,PASSWORD,IMAGE,TYPE
+0,Admin,admin@blog.web,q123,None,admin
+1,Neeraj,neeraj7rajeena@gmail.com,12345678,None,user
+3,Dummy2,dummy@gmail.in,123123123,None,user

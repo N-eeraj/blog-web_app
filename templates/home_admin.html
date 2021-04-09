@@ -1,0 +1,16 @@
+{% extends 'layout_admin.html' %}
+
+{% block body %}
+{% for i in val%}
+<div>
+    <h2>{{i[2]}}</h2>
+    <div>
+        <img src='../static/images/dp/{{i[6]}}.png'>
+        <h4>{{i[4]}}</h4>
+    </div>
+    <h4>{{i[5]}}</h4>
+    <p>{{i[3]}}</p>
+    <a href=/delete_blog?id={{i[0]}}>Delete</a>
+</div>
+{% endfor %}
+{% endblock %}

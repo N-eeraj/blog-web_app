@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<meta name=viewport content='width=device-width'>
+		<title>Blog App: Login</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}">
+	</head>
+	<body>
+		<form method="post" action="/login">
+			<input type=email placeholder='   Enter Mail ID' name='mail' required>
+			<input type=password placeholder='   Enter Password' name='pswd' required>
+			<input type=submit value=Login>
+		</form>
+		<hr>
+		<span>Don't have an account ? </span><a href=/register>Register</a>
+	</body>
+</html>

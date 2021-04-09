@@ -7,13 +7,13 @@ from werkzeug.utils import secure_filename
 from datetime import *
 
 app = Flask(__name__)
+app.static_folder = 'static'
 app.secret_key = 'ab'
 ###	created flask object
 ###	set  secret key
 ###	paths
-path_dp = r'static/dp/'
+path_dp = 'static/images/dp/'
 path_db = 'static/db/'
-path_style = r'/static/styles'
 
 profile_db = pd.read_csv(path_db + 'profile_db.csv')
 blog_db = pd.read_csv(path_db + 'blog_db.csv')
@@ -88,6 +88,9 @@ def delete_user():
 	if 'lid' in session:
 		global profile_db, blog_db
 		user_id = request.args.get('id')
+		dp = profile_db[profile_db.LOGIN_ID == int(user_id)].IMAGE.tolist()[0]
+		if dp != 'None':
+			os.remove(path_dp + dp + '.png')
 		del_profile_db = profile_db[profile_db.LOGIN_ID != int(user_id)]
 		del_blog_db = blog_db[blog_db.AUTHOR_ID != int(user_id)]
 		del_profile_db.to_csv(path_db + 'profile_db.csv', index=False)
@@ -219,7 +222,6 @@ def update_dp():
 		img_name = str(session['lid']) + time
 		img.save(os.path.join(path_dp, img_name+'.png'))
 		img_old = profile_db[profile_db.LOGIN_ID == session['lid']].IMAGE.tolist()[0]
-		print(img_old)
 		if img_old != 'None':
 			os.remove(path_dp + img_old + '.png')
 		profile_db.at[session['lid'], 'IMAGE'] = img_name

@@ -1,0 +1,9 @@
+{% extends 'layout_user.html' %}
+
+{% block body %}
+<form method="post" action="/update_profile">
+    <input type=text placeholder='   Enter Your Name' value="{{val[1]}}" name=name required pattern="{1, 32}">
+    <input type=email placeholder='   Enter Mail ID' value="{{val[2]}}" name=mail required>
+    <input type="submit" value="Update">
+</form>
+{% endblock %}

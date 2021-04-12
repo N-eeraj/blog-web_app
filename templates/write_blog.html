@@ -1,9 +1,0 @@
-{% extends 'layout_user.html' %}
-
-{% block body %}
-<form method="post" action="/upload_blog">
-    <input type="text" placeholder="   Title" name="title" required>
-    <textarea placeholder="   Enter your content here" name='content' required></textarea>
-    <input type=submit value="Post">
-</form>
-{% endblock %}

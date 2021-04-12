@@ -249,7 +249,10 @@ def delete_blog():
 @app.route('/change_password')
 def change_password():
 	if 'lid' in session:
-		return render_template('change_password.html')
+		if session['lid'] == 0:
+			return render_template('change_password_admin.html')
+		else:
+			return render_template('change_password_user.html')
 	else:
 		return '''<script>alert('Not Allowed');window.location='/'</script>'''
 

@@ -1,0 +1,27 @@
+{% extends 'layout_user.html' %}
+
+{% block body %}
+
+<style>
+    .dlt_btn{
+		width: 40%;
+		padding: 2%;
+    }
+</style>
+
+{% for i in val %}
+<div class="blog">
+    <h2 class="blog_title">{{i[2]}}</h2>
+    <div class="blog_author">
+        <img src='../static/images/dp/{{i[6]}}.png' class="dp">
+        <h4 class="name">{{i[4]}}</h4>
+    </div>
+    <h4 class="mail">{{i[5]}}</h4>
+    <p class="content">{{i[3]}}</p>
+    <div class="btns_div">
+        <a href=/delete_blog?id={{i[0]}} class="dlt_btn btn_dlt">Delete</a>
+        <a href="/edit_blog?id={{i[0]}}" class="edt_btn">Edit</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'layout_admin.html' %}
+
+{% block body %}
+{% for i in val%}
+<div class="user">
+    <div class="profile">
+        <img src='../static/images/dp/{{i[4]}}.png' class="dp user_dp">
+        <h4 class="user_name">{{i[1]}}</h4>
+    </div>
+    <h4 class="user_mail">{{i[2]}}</h4>
+    <a href='/delete_user?id={{i[0]}}' class="dlt_btn">Delete</a>
+</div>
+{% endfor %}
+{% endblock %}

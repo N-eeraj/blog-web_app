@@ -1,0 +1,42 @@
+{% extends 'layout_user.html' %}
+
+{% block body %}
+
+    <style>
+        html, body{margin: 0;}
+        
+        #btn{
+            margin-top: 5%;
+            padding: 3%;
+            background-color: rgb(0, 100, 255);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        @media screen and (orientation: landscape)
+        {
+            #btn{
+                margin-top: 0;
+                padding: 2%;
+            }
+        }
+        @media screen and (orientation: landscape) and (min-width: 1024px)
+        {
+            
+            #btn{padding: 1%;}
+        }
+
+        @media screen and (orientation: landscape) and (min-width: 1280px) and (min-aspect-ratio: 16/9)
+        {
+            #btn{
+                background-color: rgba(0, 100, 255, .8);
+            }#btn:hover{background-color: rgb(0, 100, 255);}
+        }
+    </style>
+
+<form action="/update_dp" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <input type="submit" value="Update Profile Picture" id=btn>
+</form>
+{% endblock %}

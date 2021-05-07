@@ -1,0 +1,133 @@
+{% extends 'layout_user.html' %}
+
+{% block body %}
+
+<style>
+
+    #main{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .dp{
+        width: 50vw;
+    }
+    h2{
+        color: rgb(0, 75, 155);
+        margin-bottom: 0;
+    }
+    h3{
+        margin-top: 3.6%;
+        margin-bottom: 5%;
+        color: rgb(0, 50, 255);
+    }
+    #edit{
+        padding: 1.5% 7%;
+        border-radius: 7px;
+        background-color: rgb(55, 100, 255);
+        color: white;
+		transition: .5s;
+    }
+
+    #pswd{
+        margin: 7% auto 0 auto;
+        padding: 3% 5%;
+        background-color: rgba(0, 100, 255, .7);
+		text-align: center;
+		border-radius: 7px;
+		color: white;
+		transition: .5s;
+    }
+
+	@media screen and (min-width: 720px)
+	{
+        h2{font-size: 4.2vh;}
+        h3{font-size: 3.2vh;}
+        #edit{font-size: 2.4vh;}
+	}
+
+    @media screen and (orientation: landscape)
+    {
+        #content{
+            margin-top: 0;
+        }
+        #main{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #info_div{
+            display: flex;
+            align-items: center;
+            width: 60%;
+        }
+        .dp{
+            width: 50vh;
+            height: 50vh;
+        }
+        h3{
+            margin-bottom: 5%;
+        }
+        #edit{
+            padding: 2% 8%;
+        }
+        
+        #inner_info_div{
+            height: 100%;
+            flex-direction: row;
+            flex: 1;
+            text-align: left;
+            margin-left: 7%;
+            margin-top: 10%;
+        }
+
+        #pswd{
+            margin: auto;
+            padding: 2.5% 3%;
+        }
+
+        h2{font-size: 5vh;}
+        h3{font-size: 4.2vh;}
+        #edit{font-size: 3vh;}
+    }
+
+    @media screen and (orientation: landscape) and (min-width: 720px) and (min-aspect-ratio: 3/4)
+    {
+        #content{margin-top: 1%;}
+        .dp{
+            width: 30vh;
+            height: 30vh;
+        }
+        #edit{padding: .5vh 3vw;}
+        #pswd{padding: 2% 3%;}
+    }
+
+    @media screen and (orientation: landscape) and (min-width: 1280px) and (min-aspect-ratio: 4/3)
+    {
+        h2{font-size: 4.8vh;}
+        h3{font-size: 3.6vh;}
+        #edit{font-size: 2.5vh;}
+        #pswd{font-size: 2.5vh;}
+    }
+
+    @media screen and (orientation: landscape) and (min-width: 1280px) and (min-aspect-ratio: 16/9)
+    {
+        #edit{padding: 1.25vh 2.5vw;}
+        #pswd{padding: 1.25% 1.5%;}
+    }
+</style>
+
+<div id=main>
+
+    <div id="info_div">
+        <a href='/change_dp'><img src='../static/images/dp/{{val[4]}}.png' class="dp"></a>
+        <div id="inner_info_div">
+            <h2>{{val[1]}}</h2>
+            <h3>{{val[2]}}</h3>
+            <a href='/edit_profile' id=edit>Edit</a>
+        </div>
+    </div>
+    <a href='/change_password' id=pswd>Change Password</a>
+
+</div>
+
+{% endblock %}

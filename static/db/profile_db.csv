@@ -1,0 +1,3 @@
+LOGIN_ID,NAME,EMAIL,PASSWORD,IMAGE,TYPE
+0,Admin,admin@blog.web,q123,None,admin
+1,Dummy_007,me@you.us,123123,None,user
